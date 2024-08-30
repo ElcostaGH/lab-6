@@ -1,24 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Laboratorio 4
+# Posee los archivos de mi laboratorio 2 para los estilos, js y html, pero no logré hacer arrancar correctamente la pagina
+# Todo lo solicitado en esta entrega esta cumplido. Creacion de tablas, seeds y validaciones
