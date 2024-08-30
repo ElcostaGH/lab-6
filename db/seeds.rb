@@ -43,3 +43,4 @@ Comment.create(author: "Elcosta", content: "me encantan mis perros, y echo de me
 Comment.create(author: "Elcosta", content: "me encantaria tener una Explorer o una Flying V")
 Comment.create(author: "Elcosta", content: "A veces estudio poco")
 Comment.create(author: "Elcosta", content: "pero enseño estadistica asi que ya no integro :(")
+Comment.create(author: "Elcosta", content: "creo que me falto un comentario")
