@@ -11,17 +11,16 @@ User.create(email: "user9@example.com", first_name: "pamela", last_name: "bustam
 User.create(email: "user10@example.com", first_name: "daniel", last_name: "escaff")
 
 #Seeds for Post
-Post.create(author: "user1@example.com", title: "hola", content: "buenos dias mundo", published: 1)
-Post.create(author: "user1@example.com", title: "universidad", content: "estoy en la universidad de los andes", published: 1)
-Post.create(author: "user1@example.com", title: "ingenieria", content: "estudio ingenieria civil industrial", published: 1)
-Post.create(author: "user1@example.com", title: "concentracion", content: "estoy en la concentracion de desarrollo web", published: 1)
-Post.create(author: "user1@example.com", title: "gustos musicales", content: "me gusta mucho el metal y el rock", published: 1)
-Post.create(author: "user1@example.com", title: "gaming", content: "me gusta mucho jugar videojuegos", published: 1)
-Post.create(author: "user1@example.com", title: "perros", content: "tengo 3 perros, Otto, Emma y Chewy", published: 1)
-Post.create(author: "user1@example.com", title: "guitarra", content: "Tengo 6 guitarras: Una Ibanez Jem, una Epiphone Les Paul, una Gibson U2, una Fender Telecaster, una Takemine electroacustica y una Walden electroacustica", published: 1)
-Post.create(author: "user1@example.com", title: "estudiar", content: "A veces estudio mucho", published: 1)
-Post.create(author: "user1@example.com", title: "calculo", content: "Me gusta mucho integrar", published: 1)
-
+Post.create(author: "user1@example.com", title: "hola", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", published: 1)
+Post.create(author: "user1@example.com", title: "universidad", content: "Estoy estudiando en la universidad de los Andes, una de las mejores universidades del país. Me encanta la vida universitaria, hay siempre algo que hacer, alguien con quien hablar, algún lugar al que ir. La universidad es un lugar donde se aprende mucho, no solo en el aula, sino también en la vida diaria.", published: 1)
+Post.create(author: "user1@example.com", title: "ingenieria", content: "Estoy estudiando ingeniería civil industrial, una carrera muy demandante, pero también muy gratificante. Me gusta la forma en que se combinan la teoría y la práctica para resolver problemas complejos. La ingeniería es un campo en constante evolución, siempre hay algo nuevo que aprender, algún problema que resolver.", published: 1)
+Post.create(author: "user1@example.com", title: "concentracion", content: "Estoy en la concentración de desarrollo web, un campo que me apasiona. Me gusta la forma en que se puede crear algo desde cero, algo que puede ser utilizado por miles de personas. La concentración es un lugar donde se aprende mucho, no solo sobre programación, sino también sobre diseño, usabilidad y experiencia del usuario.", published: 1)
+Post.create(author: "user1@example.com", title: "gustos musicales", content: "Me gusta mucho el metal y el rock, géneros que me permiten expresar mis emociones de manera intensa. La música es un parte importante de mi vida, siempre estoy escuchando algo nuevo, descubriendo bandas y artistas que me gustan. La música es un lenguaje universal, puede unir a las personas de manera que nada más puede.", published: 1)
+Post.create(author: "user1@example.com", title: "gaming", content: "Me gusta mucho jugar videojuegos, es una forma de relajarme y divertirme. Me gustan juegos de todo tipo, desde juegos de estrategia hasta juegos de acción. La industria de los videojuegos es muy grande y en constante evolución, siempre hay algo nuevo que jugar, algún juego que descubrir.", published: 1)
+Post.create(author: "user1@example.com", title: "perros", content: "Tengo 3 perros, Otto, Emma y Chewy, son mis mejores amigos. Me encanta la forma en que siempre están ahí para mí, siempre dispuestos a jugar o simplemente a estar cerca. Los perros son animales increíbles, pueden enseñarnos mucho sobre la lealtad y el amor incondicional.", published: 1)
+Post.create(author: "user1@example.com", title: "guitarra", content: "Tengo 6 guitarras, cada una con su propia personalidad y sonido. Me gusta tocar la guitarra, es una forma de expresarme de manera creativa. La guitarra es un instrumento versátil, se puede tocar en muchos estilos diferentes, desde el rock hasta el jazz.", published: 1)
+Post.create(author: "user1@example.com", title: "estudiar", content: "A veces estudio mucho, es una forma de mejorar mis habilidades y conocimientos. Me gusta aprender nuevas cosas, descubrir conceptos y teorías que no conocía. El estudio es un proceso continuo, siempre hay algo nuevo que aprender, algún tema que profundizar.", published: 1)
+Post.create(author: "user1@example.com", title: "calculo", content: "Me gusta mucho integrar, es una forma de resolver problemas complejos de manera elegante. La integración es un concepto fundamental en el cálculo, permite resolver problemas que de otra manera serían imposibles de resolver. Me gusta la forma en que la integración se puede aplicar a muchos campos diferentes, desde la física hasta
 #Seeds for Comment
 Comment.create(author: "user1@example.com", content: "hola buenos dias tambien")
 Comment.create(author: "user1@example.com", content: "que bueno, yo tambien soy de la uandes")
