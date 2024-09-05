@@ -3,6 +3,7 @@ class CreateCommentModel < ActiveRecord::Migration[7.2]
     create_table :comments do |t|
       t.string :author, null: false
       t.text :content, null: false
+      t.belongs_to :post, null: false
       t.timestamps
     end
   end 

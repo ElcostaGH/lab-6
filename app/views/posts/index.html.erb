@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+    <%= post.title %>
+    <%= post.author %>
+    <%= post.content %>
+    <%= post.created_at %>
+    <%= link_to 'Show', post, class: 'btn' %>
+<% end %>

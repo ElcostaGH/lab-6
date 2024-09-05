@@ -3,4 +3,5 @@ class Post < ApplicationRecord
     validates :author, email: true
     validates :title, presence: true, length: { maximum: 100}
     validates :content, presence: true, length: { minimum: 141}
+    has_many :comments
   end
