@@ -23,9 +23,9 @@ Post.create(author: "user1@example.com", title: "estudiar", content: "A veces es
 Post.create(author: "user1@example.com", title: "calculo", content: "Me gusta mucho integrar, es una forma de resolver problemas complejos de manera elegante. La integración es un concepto fundamental en el cálculo, permite resolver problemas que de otra manera serían imposibles de resolver. Me gusta la forma en que la integración se puede aplicar a muchos campos diferentes, desde la física hasta", published: 1)
 #Seeds for Comment
 Comment.create(author: "user1@example.com", content: "hola buenos dias tambien", post_id: 1)
-Comment.create(author: "user1@example.com", content: "que bueno, yo tambien soy de la uandes", post_id: 2)
-Comment.create(author: "user1@example.com", content: "wow, yo tambien estudio industrial", post_id: 3)
-Comment.create(author: "user1@example.com", content: "yo casi quedo en la concentracion de fluid mechanics", post_id: 4)
+Comment.create(author: "user1@example.com", content: "que bueno, yo tambien soy de la uandes", post_id: 1)
+Comment.create(author: "user1@example.com", content: "wow, yo tambien estudio industrial", post_id: 1)
+Comment.create(author: "user1@example.com", content: "yo casi quedo en la concentracion de fluid mechanics", post_id: 1)
 Comment.create(author: "user1@example.com", content: "mis grupos favoritos son Metallica, System of a Down y Megadeth", post_id: 5)
 Comment.create(author: "user1@example.com", content: "me encantan mis perros, y echo de menos a los que ya no estan, Jaguer y Noah", post_id: 6)
 Comment.create(author: "user1@example.com", content: "me encantaria tener una Explorer o una Flying V", post_id: 7)

@@ -1,7 +1,17 @@
-<% @posts.each do |post| %>
-    <%= post.title %>
-    <%= post.author %>
-    <%= post.content %>
-    <%= post.created_at %>
-    <%= link_to 'Show', post, class: 'btn' %>
-<% end %>
+<div class="container text-center">
+    <div class="row">
+        <% @posts.each do |post| %>    
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= post.title %></h5>
+                        <h6 class="card-text"><%= post.author %></h6>
+                        <p class="card-text"><%= post.content %></p>
+                        <p class="card-text"><%= post.created_at %></p>
+                        <%= link_to 'Show', post, class: "btn btn-info" %>
+                    </div>
+                </div>
+            </div>    
+        <% end %>
+    </div>
+</div>
