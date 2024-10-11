@@ -6,29 +6,44 @@
             <h6> <%= @post.author %> </h6>
             <p> <%= @post.content %> </p>
             <p> <%= @post.created_at %> </p>
+            
+            <!-- Enlaces para editar y eliminar el post -->
+            <% if user_signed_in? && @post.user == current_user %>
+              <%= link_to 'Edit', edit_post_path(@post) %>
+              <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
         </div>
     </div>
   </div>
+
   <div class="row justify-content-center">
-        <div class="col-md-6">
-            <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Author</th>
-                <th scope="col">Comment</th>
-                <th scope="col">Date</th>
+    <div class="col-md-6">
+      <h5>Comments</h5> <!-- Añadir título para los comentarios -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Author</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Date</th>
+            <th scope="col">Actions</th> <!-- Columna para acciones -->
+          </tr>
+        </thead>
+        <tbody>
+          <% @post.comments.each do |comment| %>    
+            <tr> 
+              <td> <%= comment.author %> </td>
+              <td> <%= comment.content %> </td>
+              <td> <%= comment.created_at %> </td>
+              <td>
+                <% if user_signed_in? && comment.user == current_user %>
+                  <%= link_to 'Edit', edit_comment_path(comment) %>
+                  <%= link_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
+              </td>
             </tr>
-            </thead>
-            <tbody>
-            <% @post.comments.each do |comment| %>    
-                <tr> 
-                <td> <%= comment.author %> </td>
-                <td> <%= comment.content %> </td>
-                <td> <%= comment.created_at %> </td>
-                </tr>
-            <% end %>
-            </tbody>
-            </table>
-        </div>
+          <% end %>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>

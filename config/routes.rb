@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "static_pages/welcome"
   get "static_pages/about"
   devise_for :users, controllers: { sessions: 'sessions', registrations: 'registrations' }
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -17,5 +18,7 @@ Rails.application.routes.draw do
    get "/about", to:"posts#about"
    get "/contact", to:"posts#contact"
    get "/home", to:"posts#home"
-   resources :posts
+   resources :posts do
+    resources :comments, only: [:create, :edit, :update, :destroy]
+  end
 end
