@@ -15,24 +15,13 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-
   </head>
 
   <body>
-  <ul>
-    <% if user_signed_in? %>
-      <li><%= link_to "Hi, #{current_user.email}", edit_user_registration_path %></li>
-      <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false } %>
-      <li>Sign Out</li>
-    <% else %>
-      <li><%= link_to 'Sign In', new_user_session_path %></li>
-      <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-    <% end %>
-  </ul>
-  <%= render 'layouts/navbar' %>
-  <%= render 'layouts/footer' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/footer' %>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
