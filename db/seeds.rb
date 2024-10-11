@@ -1,16 +1,16 @@
 #Seeds for User
 
 
-user1 = User.create!(email: "jose@costa.com", first_name: "Jose", last_name: "Costa")
-user2 = User.create!(email: "consu@lemp.com", first_name: "Consuelo", last_name: "Lemp")
-user3 = User.create!(email: "andres@howard.com", first_name: "Andres", last_name: "Howard")
-user4 = User.create!(email: "matias@recabarren.com", first_name: "Matias", last_name: "Recabarren")
-user5 = User.create!(email: "claudio@telha.com", first_name: "Claudio", last_name: "Telha")
-user6 = User.create!(email: "enrique@spierre.com", first_name: "Enrique", last_name: "Saint-Pierre")
-user7 = User.create!(email: "milena@bonacic.com", first_name: "Milena", last_name: "Bonacic")
-user8 = User.create!(email: "pilar@gazmuri.com", first_name: "Pilar", last_name: "Gazmuri")
-user9 = User.create!(email: "pamela@bustamante.com", first_name: "Pamela", last_name: "Bustamante")
-user10 = User.create!(email: "daniel@escaff.com", first_name: "Daniel", last_name: "Escaff")
+user1 = User.create!(email: "jose@costa.com", first_name: "Jose", last_name: "Costa", password: 123123)
+user2 = User.create!(email: "consu@lemp.com", first_name: "Consuelo", last_name: "Lemp", password: 123123)
+user3 = User.create!(email: "andres@howard.com", first_name: "Andres", last_name: "Howard", password: 123123)
+user4 = User.create!(email: "matias@recabarren.com", first_name: "Matias", last_name: "Recabarren", password: 123123)
+user5 = User.create!(email: "claudio@telha.com", first_name: "Claudio", last_name: "Telha", password: 123123)
+user6 = User.create!(email: "enrique@spierre.com", first_name: "Enrique", last_name: "Saint-Pierre", password: 123123)
+user7 = User.create!(email: "milena@bonacic.com", first_name: "Milena", last_name: "Bonacic", password: 123123)
+user8 = User.create!(email: "pilar@gazmuri.com", first_name: "Pilar", last_name: "Gazmuri", password: 123123)
+user9 = User.create!(email: "pamela@bustamante.com", first_name: "Pamela", last_name: "Bustamante", password: 123123)
+user10 = User.create!(email: "daniel@escaff.com", first_name: "Daniel", last_name: "Escaff", password: 123123)
 
 #Seeds for Post
 Post.create!(user: user1, author: user1.email, title: "Hola", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.", published: 1)
