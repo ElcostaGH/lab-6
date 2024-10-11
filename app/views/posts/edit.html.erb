@@ -1,0 +1,19 @@
+<h2>Edit Post</h2>
+
+<%= form_for(@post) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, size: 50 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content, rows: 10, cols: 50 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update Post" %>
+  </div>
+<% end %>
+
+<%= link_to 'Cancel', @post %> <!-- Regresar al post -->

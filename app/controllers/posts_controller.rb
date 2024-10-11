@@ -25,21 +25,28 @@ class PostsController < ApplicationController
     end
   
     def edit
-      # Se obtiene el post en el callback set_post
-    end
+        @post = Post.find(params[:id])
+      end
   
     def update
-      if @post.update(post_params)
-        redirect_to @post, notice: 'Post was successfully updated.'
-      else
-        render :edit  # Renderiza el formulario si hay errores
+        @post = Post.find(params[:id])
+      
+        if @post.update(post_params)  # Usa post_params para permitir los parámetros permitidos
+          redirect_to @post, notice: 'Post was successfully updated.'
+        else
+          render :edit  # Si hay errores, vuelve a renderizar la vista de edición
+        end
       end
-    end
   
     def destroy
-      @post.destroy
-      redirect_to posts_path, notice: 'Post was successfully deleted.'
-    end
+        @post = Post.find(params[:id])
+        if @post.user == current_user  # Verifica que el usuario sea el propietario
+          @post.destroy
+          redirect_to posts_path, notice: 'Post was successfully deleted.'
+        else
+          redirect_to posts_path, alert: 'Not authorized to delete this post.'
+        end
+      end
   
     private
   
@@ -52,7 +59,7 @@ class PostsController < ApplicationController
     end
   
     def post_params
-      params.require(:post).permit(:title, :body)  # Asegúrate de incluir los parámetros que necesitas
+      params.require(:post).permit(:title, :content)  # Asegúrate de incluir los parámetros que necesitas
     end
 
     def authorize_user!
