@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
-    validates :author, email: true
-    validates :content, presence: true
-    belongs_to :post
-    belongs_to :user
-  end
+  belongs_to :post
+  belongs_to :user  # Asegúrate de que esta línea esté presente
+  validates :author, presence: true
+  validates :content, presence: true
+end
