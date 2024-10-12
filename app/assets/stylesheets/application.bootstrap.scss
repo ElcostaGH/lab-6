@@ -29,6 +29,7 @@ p {
     font-family:'Calibri';
     font-size: 12;
     color: rgb(0, 0, 0);
+    
 }
 
 .error-messages p {
@@ -36,5 +37,43 @@ p {
     font-size: 12px;
   }
   
+.card {
+    max-height: 250px; /* ajusta la altura máxima según sea necesario */
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+
+.main-content {
+    margin-bottom: 50px; /* ajusta el margen inferior según sea necesario */
+  }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* agrega un espacio entre las filas de cards */
+  }
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f9f9; /* fondo claro */
+    padding: 20px;
+  }
   
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* texto oscuro */
+  }
   
+  .subtitle {
+    font-size: 24px;
+    font-weight: normal;
+    color: #666;
+    text-align: center;
+  }
