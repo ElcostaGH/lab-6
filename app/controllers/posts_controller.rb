@@ -59,8 +59,7 @@ class PostsController < ApplicationController
         else
           redirect_to posts_path, alert: 'Not authorized to delete this post.'
         end
-      end
-  
+      end  
     private
   
     def set_post
