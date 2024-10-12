@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     end
   
     def edit
-      # Ya tienes @comment cargado
+      @comment = Comment.find(params[:id])
     end
   
     def update
