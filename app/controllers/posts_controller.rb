@@ -23,6 +23,7 @@ class PostsController < ApplicationController
         @post.author = current_user.email
         @post.user = current_user
         if @post.save
+          flash[:success] = "Post created successfully"
           redirect_to posts_path, notice: 'Post created successfully'
         else
           puts "Errores: #{@post.errors.full_messages}"
@@ -41,7 +42,8 @@ class PostsController < ApplicationController
     def update
         @post = Post.find(params[:id])
       
-        if @post.update(post_params)  # Usa post_params para permitir los parámetros permitidos
+        if @post.update(post_params)
+          flash[:notice] = "Post created successfully"
           redirect_to @post, notice: 'Post was successfully updated.'
         else
           render :edit  # Si hay errores, vuelve a renderizar la vista de edición
@@ -52,6 +54,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         if @post.user == current_user  # Verifica que el usuario sea el propietario
           @post.destroy
+          flash[:error] = "Post deleted successfully"
           redirect_to posts_path, notice: 'Post was successfully deleted.'
         else
           redirect_to posts_path, alert: 'Not authorized to delete this post.'
