@@ -36,7 +36,7 @@
               <td> <%= comment.created_at %> </td>
               <td>
                 <% if user_signed_in? && comment.user == current_user %>
-                  <%= link_to 'Edit', edit_comment_path(comment) %>
+                  <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
                   <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
               </td>
