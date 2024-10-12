@@ -18,10 +18,13 @@ class PostsController < ApplicationController
   
     def create
       @post = Post.new(post_params)
+      @post.author = current_user.email
+      @post.user = current_user
       if @post.save
         redirect_to posts_path, notice: 'Post created successfully'
       else
-        render :new
+        puts "Errores: #{@post.errors.full_messages}"
+        redirect_to new_post_path, alert: 'Error al crear el post'
       end
     end
   
@@ -60,7 +63,7 @@ class PostsController < ApplicationController
     end
   
     def post_params
-      params.require(:post).permit(:title, :content)  # Asegúrate de incluir los parámetros que necesitas
+      params.require(:post).permit(:title, :content, :user_id)  # Ajusta según los parámetros de tu modelo
     end
 
     def authorize_user!
