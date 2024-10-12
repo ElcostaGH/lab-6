@@ -8,7 +8,8 @@ class PostsController < ApplicationController
     end
   
     def show
-        @post = Post.includes(:comments).find(params[:id])  # Esto optimiza la carga de comentarios
+      @post = Post.find(params[:id])
+      @comment = @post.comments.build
     end
   
     def new
@@ -16,11 +17,11 @@ class PostsController < ApplicationController
     end
   
     def create
-      @post = current_user.posts.build(post_params)
+      @post = Post.new(post_params)
       if @post.save
-        redirect_to @post, notice: 'Post was successfully created.'
+        redirect_to posts_path, notice: 'Post created successfully'
       else
-        render :new  # Renderiza el formulario si hay errores
+        render :new
       end
     end
   

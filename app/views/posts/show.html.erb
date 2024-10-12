@@ -46,4 +46,20 @@
       </table>
     </div>
   </div>
-</div>
+
+  <% if user_signed_in? %>
+  <%= form_for([@post, @post.comments.build]) do |form| %>
+    <%= form.text_area :content, placeholder: 'Escribe un comentario' %>
+    <%= form.hidden_field :author, value: current_user.first_name + ' ' + current_user.last_name %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.submit 'Comentar', class: 'btn btn-primary' %>
+  <% end %>
+
+  <% if @post.comments.build.errors.any? %>
+    <ul>
+      <% @post.comments.build.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
