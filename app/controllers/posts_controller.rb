@@ -17,14 +17,20 @@ class PostsController < ApplicationController
     end
   
     def create
-      @post = Post.new(post_params)
-      @post.author = current_user.email
-      @post.user = current_user
-      if @post.save
-        redirect_to posts_path, notice: 'Post created successfully'
+      # Verificar si el usuario tiene permiso para crear un post
+      if can?(:create, Post)
+        @post = Post.new(post_params)
+        @post.author = current_user.email
+        @post.user = current_user
+        if @post.save
+          redirect_to posts_path, notice: 'Post created successfully'
+        else
+          puts "Errores: #{@post.errors.full_messages}"
+          redirect_to new_post_path, alert: 'Error al crear el post'
+        end
       else
-        puts "Errores: #{@post.errors.full_messages}"
-        redirect_to new_post_path, alert: 'Error al crear el post'
+        # Si el usuario no tiene permiso, redirigir a una página de acceso denegado
+        redirect_to root_path, alert: 'No tienes permiso para crear posts'
       end
     end
   

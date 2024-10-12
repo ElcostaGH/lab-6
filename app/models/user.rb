@@ -8,4 +8,8 @@ class User < ApplicationRecord
   
   has_many :posts
   has_many :comments
+
+  def admin?
+    self[:admin]
+  end
 end
