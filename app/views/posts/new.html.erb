@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="display-4 mb-1">Create New Post</h2>
+  <h1 class="display-4 mb-1">Create New Post</h2>
 </div>
 
 <div class="container py-3">
@@ -22,9 +22,20 @@
 
     <div class="form-group">
       <%= form.label :content %>
-      <%= form.text_area :content, class: 'form-control' %>
+      <%= form.text_area :content, class: 'form-control', id: 'post_content' %>
+      <span id="character-count">0 caracteres</span>
     </div>
 
     <%= form.submit 'Create Post', class: 'btn btn-primary' %>
   <% end %>
 </div>
+
+<script>
+  const textarea = document.getElementById('post_content');
+  const characterCount = document.getElementById('character-count');
+
+  textarea.addEventListener('input', () => {
+    const characters = textarea.value.length;
+    characterCount.textContent = `${characters} caracteres`;
+  });
+</script>
