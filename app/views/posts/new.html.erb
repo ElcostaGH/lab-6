@@ -31,11 +31,14 @@
 </div>
 
 <script>
-  const textarea = document.getElementById('post_content');
-  const characterCount = document.getElementById('character-count');
+  document.addEventListener("DOMContentLoaded", function() {
+    const textarea = document.getElementById('post_content');
+    const characterCount = document.getElementById('character-count');
 
-  textarea.addEventListener('input', () => {
-    const characters = textarea.value.length;
-    characterCount.textContent = `${characters} caracteres`;
+    textarea.addEventListener('input', () => {
+      const characters = textarea.value.length;
+      characterCount.textContent = `${characters} caracteres`;
+    });
   });
 </script>
+

@@ -1,19 +1,23 @@
-<h2>Edit Post</h2>
+<div class="container mt-5">
+  <h2>Edit Post</h2>
 
-<%= form_for(@post) do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, size: 50 %>
+  <%= form_for(@post) do |f| %>
+    <div class="mb-3">
+      <%= f.label :title, class: 'form-label' %>
+      <%= f.text_field :title, class: 'form-control', size: 50 %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :content, class: 'form-label' %>
+      <%= f.text_area :content, class: 'form-control', rows: 10, cols: 50 %>
+    </div>
+
+    <div class="text-center">
+      <%= f.submit "Update Post", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+  <div class="text-center mt-3">
+    <%= link_to 'Cancel', @post, class: 'btn btn-secondary' %> <!-- Regresar al post -->
   </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content, rows: 10, cols: 50 %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update Post" %>
-  </div>
-<% end %>
-
-<%= link_to 'Cancel', @post %> <!-- Regresar al post -->
+</div>

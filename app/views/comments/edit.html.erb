@@ -1,27 +1,34 @@
-<!-- app/views/comments/edit.html.erb -->
-<h1>Edit Comment</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6"> <!-- Cambia a col-md-6 para que la forma sea más ancha -->
+      <div class="card">
+        <h1 class="card-title">Edit Comment</h1>
 
-<%= form_with(model: @comment, url: post_comment_path(@comment.post, @comment), local: true) do |form| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+        <%= form_with(model: @comment, url: post_comment_path(@comment.post, @comment), local: true) do |form| %>
+          <% if @comment.errors.any? %>
+            <div class="alert alert-danger" id="error_explanation">
+              <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-      <ul>
-        <% @comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+              <ul>
+                <% @comment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= form.label :content, class: 'form-label' %>
+            <%= form.text_area :content, value: @comment.content, class: 'form-control' %> <!-- Cargar el contenido actual -->
+          </div>
+
+          <div class="form-group">
+            <%= form.submit "Save", class: 'btn btn-primary' %>
+          </div>
         <% end %>
-      </ul>
+
+        <%= link_to 'Back', post_path(@comment.post), class: 'btn btn-secondary' %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content, value: @comment.content %> <!-- Cargar el contenido actual -->
   </div>
-
-  <div class="actions">
-    <%= form.submit "Save" %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', post_path(@comment.post) %>
+</div>
